@@ -6,6 +6,7 @@
 body { 
   max-width: 54em;
   padding:0 1em;
+  margin:0 auto;
 }
 
 #header {
@@ -21,7 +22,9 @@ body {
 
 form {
   padding:1.5em;
-  background: #bbbbbb;
+  background: rgb(221, 221, 221);
+  margin:0 auto;
+
 }
 form div {
   margin-bottom: 5.em;
@@ -29,6 +32,8 @@ form div {
   color:#1b1b1b;
   border-radius: .25em;
   display:block;
+  padding: 1em;
+  margin-bottom:.5em;
 }
 
 
