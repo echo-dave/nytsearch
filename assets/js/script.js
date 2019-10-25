@@ -1,7 +1,11 @@
 $( document ).ready(function() {
     let search = "election";
     let limit = 3;
-    let queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +search  + "&api-key=4T4JAn6PPSJW7c7RpRNUgAK4qSQQxGio";
+    let beginYear = "2019";
+    let endYear = "2019";
+    let beginDate = beginYear +"0101";
+    let endDate = endYear+"1231";
+    let queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +search  +"&begin_date=" +beginDate +"&end_date=" +endDate + "&api-key=4T4JAn6PPSJW7c7RpRNUgAK4qSQQxGio";
 
     $.ajax ({
         url: queryURL,
