@@ -3,6 +3,17 @@
     display: table;
     clear: both;
   }
+body { 
+  max-width: 54em;
+  padding:0 1em;
+}
+
+header {
+  height:5em;
+  background: #313131;
+  color:#dddddd;
+}
+
 
 
 form {
@@ -27,3 +38,6 @@ form div {
     border-radius:.25em;
   }
 
+article:nth-child(even){
+  background: rgb(172, 172, 172);
+}
