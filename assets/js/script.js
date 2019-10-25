@@ -1,11 +1,28 @@
 $( document ).ready(function() {
     let search = "election";
     let limit = 3;
-    let beginYear = "2019";
-    let endYear = "2019";
-    let beginDate = beginYear +"0101";
-    let endDate = endYear+"1231";
-    let queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +search  +"&begin_date=" +beginDate +"&end_date=" +endDate + "&api-key=4T4JAn6PPSJW7c7RpRNUgAK4qSQQxGio";
+    let beginYear = "";
+    let endYear = "";
+    //let queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +search  +"&begin_date=" +beginDate +"&end_date=" +endDate + "&api-key=4T4JAn6PPSJW7c7RpRNUgAK4qSQQxGio";
+
+    const queryParams ={
+        q: search,
+        "api-key": "4T4JAn6PPSJW7c7RpRNUgAK4qSQQxGio"
+    };
+
+    if (beginYear != "") {
+        queryParams.begin_date = beginYear +"0101";
+    }
+
+    if (endYear !== "") {
+        queryParams.end_date = endYear +"1231";
+    }
+
+    const paramString = $.param(queryParams);
+
+    const queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" + paramString;
+
+    console.log(queryURL);
 
     $.ajax ({
         url: queryURL,
@@ -14,7 +31,7 @@ $( document ).ready(function() {
 
         for (let i =0; i < limit; i++) {
         
-        console.log(response.response.docs[i]);
+        console.log(response.response.docs[i].headline.main);
 
         }
 
