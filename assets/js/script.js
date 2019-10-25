@@ -1,11 +1,11 @@
 $( document ).ready(function() {
-    let search = "election";
-    let limit = 3;
+    let search = "";
+    let limit = 1;
     let beginYear = "";
     let endYear = "";
     //let queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +search  +"&begin_date=" +beginDate +"&end_date=" +endDate + "&api-key=4T4JAn6PPSJW7c7RpRNUgAK4qSQQxGio";
 
-    const queryParams ={
+    function articleSearch () {const queryParams ={
         q: search,
         "api-key": "4T4JAn6PPSJW7c7RpRNUgAK4qSQQxGio"
     };
@@ -36,7 +36,21 @@ $( document ).ready(function() {
         }
 
 
-    })
+    })}
+
+    $("button").on("click", function (){
+
+        event.preventDefault();
+        articleSearch();
+
+        search = $("#search").val().trim();
+        limit = parseInt($("#limit").val());
+        beginYear = $("#beginYear").val();
+        endYear = $("#endYear").val();
+       
+
+
+    });
 
 
 
