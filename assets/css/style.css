@@ -6,28 +6,40 @@
 body { 
   max-width: 54em;
   padding:0 1em;
+  margin:0 auto;
 }
 
-header {
+#header {
   height:5em;
   background: #313131;
   color:#dddddd;
-  margin: 0 auto 1.5em;
+  margin: 0 auto 1.5em auto;
+}
+#header div {
+  margin: 0 auto;
+  text-align: center;
 }
 
+h1 {display:inline-block}
 #main {
-  margin:0 auto 1.5em;
+  margin:0 auto 1.5em auto;
 }
 
 form {
   padding:1.5em;
-  background: #bbbbbb;
+  margin:0 auto;
+
 }
 form div {
   margin-bottom: 5.em;
-  border: .125em solid #313131;
+  border: .125em solid #888888;
   color:#1b1b1b;
   border-radius: .25em;
+  display:block;
+  padding: 1em;
+  margin-bottom:.5em;
+  background: rgb(240, 240, 240);
+
 }
 
 
@@ -39,6 +51,8 @@ form div {
     padding: 1em 2.5em;
     border: .125em #313131 solid;
     border-radius:.25em;
+    display: block;
+
   }
 
 article:nth-child(even){
